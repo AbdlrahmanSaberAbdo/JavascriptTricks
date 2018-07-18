@@ -1,0 +1,6 @@
+#isEmptyObject
+-- Example
+   if(jQuery.isEmptyObject(arr)) {
+      $(".game_over").fadeIn(500);
+   }
+   arr = [null, your number or string here ]

@@ -1,0 +1,1 @@
+EX:$("script[src*='crs']").remove();

@@ -1,0 +1,27 @@
+    var srcData;
+    var newSrc;
+    var flag = new Array();
+    /* ============== For sending image as base 64  ============= */
+    var filesSelected = document.getElementById("inputFileToLoad").files;
+    if (filesSelected.length > 0) {
+      var fileToLoad = filesSelected[0];
+
+      var fileReader = new FileReader();
+
+      fileReader.onload = function(fileLoadedEvent) {
+       srcData = fileLoadedEvent.target.result; // <--- data: base64
+
+       newSrc =  srcData.replace('data:image/png;base64,', '');
+       // newSrc =  srcData.replace('data:image/jpg;base64,', '');
+       // newSrc =  srcData.replace('data:image/jpeg;base64,', '');
+       // newSrc =  srcData.replace('data:image/png;base64,', '');
+       newSrc = srcData.split("base64,").pop();
+       sessionStorage.setItem("flagUrl", newSrc);
+        var newImage = document.createElement('img');
+        document.getElementById("imgTest").innerHTML = newImage.outerHTML;
+        // alert("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+        // console.log("Converted Base64 version is " + document.getElementById("imgTest").innerHTML);
+      }
+      fileReader.readAsDataURL(fileToLoad);
+     
+    }
