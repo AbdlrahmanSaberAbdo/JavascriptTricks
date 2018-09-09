@@ -1,0 +1,12 @@
+        var time = "2013-09-05  04:00:00";
+        // convert time to timestamp
+        var d = ( new Date(time).getTime()/1000 );
+        // Multuplied by 1000 to convert it millisecind
+        var d1 = new Date(d*1000);
+        // Hours part from the timestamp
+        var hours = d1.getHours() + 2;
+        // Minutes part from the timestamp
+        var minutes = "0" + d1.getMinutes();
+        // Seconds part from the timestamp
+        var seconds = "0" + d1.getSeconds();
+        var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);

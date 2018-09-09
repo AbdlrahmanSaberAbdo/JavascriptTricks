@@ -1,0 +1,20 @@
+  function timePlus(time, plus, operation) {
+    var d = (new Date("2013-09-05 " + time).getTime()/1000);
+    // Multuplied by 1000 to convert it millisecind
+    var d1 = new Date(d*1000);
+    // Hours part from the timestamp
+    if(operation == "+") {
+      var hours = d1.getHours() + plus;
+    }
+    else if(operation == "-") {
+      var hours = d1.getHours() - plus;
+    }
+    // Minutes part from the timestamp
+    var minutes = "0" + d1.getMinutes();
+    // Seconds part from the timestamp
+    var seconds = "0" + d1.getSeconds();
+    var formattedTime = hours + ':' + minutes.substr(-2) + ':' + seconds.substr(-2);
+    // to print time like this 00:00 don't like this 00:00:00
+    formattedTime = formattedTime.substr(0, 5);
+    return formattedTime;
+  }

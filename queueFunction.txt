@@ -1,0 +1,3 @@
+========== Queue function ========= 
+ $(this).delay(2000).queue(function() {
+   window.location.href = "{{URL::to('')}}";

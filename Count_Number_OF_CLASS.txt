@@ -1,0 +1,1 @@
+$(nameOfClass).length;
